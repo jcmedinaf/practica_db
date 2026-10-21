@@ -1,4 +1,14 @@
 ```text
+
+/**
+ * =====================================================================
+ * ARCHIVO: esquema.md
+ * DESCRIPCIÓN: Documentación de la estructura de directorios y arquitectura
+ * PROYECTO: Sistema CRUD en PHP, MySQLi y AJAX (Fines educativos)
+ * AUTOR: Juan Carlos Medina
+ * =====================================================================
+ */
+ 
 practica_db/
 │
 ├── index.html          # Interfaz principal de la aplicación
@@ -9,6 +19,7 @@ practica_db/
 │   ├── js/
 │   │   └── app.js      # Peticiones AJAX y manipulación del DOM
 │   ├── css/            # Hojas de estilo personalizadas
+│   │   └── app.css     # Estilos personalizados de la aplicación
 │   └── img/            # Recursos gráficos e imágenes
 │       └── index.png   # Imagen de la vista previa del index
 └── php/

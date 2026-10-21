@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!--
+        =====================================================================
+        ARCHIVO: index.html
+        DESCRIPCIÓN: Interfaz gráfica principal del sistema CRUD, estructurada 
+        con Bootstrap 4, iconos de Font Awesome y control asíncrono mediante jQuery/AJAX.
+        PROYECTO: Sistema CRUD en PHP, MySQLi y AJAX (Fines educativos)
+        AUTOR: Juan Carlos Medina
+        =====================================================================
+    -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Usuarios</title>
+    <title>Registro de Usuarios - Gestión de Usuarios</title>
     <!-- Bootstrap 4 CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Font Awesome Icons -->
@@ -68,17 +77,17 @@
                     <form id="form">
                         <!-- Campo oculto para almacenar el ID al momento de editar -->
                         <input type="hidden" id="id">
-                        
+
                         <div class="form-group">
-                            <label for="nombre"><i class="fa fa-user"></i> Nombres</label>
+                            <label for="nombre"><i class="fa fa-user"></i> Nombre</label>
                             <input type="text" id="nombre" class="form-control" placeholder="Ingrese su nombre..." required>
                         </div>
-                        
+
                         <div class="form-group">
-                            <label for="apellido"><i class="fa fa-user-o"></i> Apellidos</label>
+                            <label for="apellido"><i class="fa fa-user-o"></i> Apellido</label>
                             <input type="text" id="apellido" class="form-control" placeholder="Ingrese su apellido..." required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email"><i class="fa fa-envelope"></i> Correo Electrónico</label>
                             <input type="email" id="email" class="form-control" placeholder="Ingrese su email..." required>
@@ -89,7 +98,7 @@
                             <input type="password" id="clave" class="form-control" placeholder="Ingrese su contraseña...">
                             <small class="form-text text-muted">Si edita, déjelo vacío para conservar la actual.</small>
                         </div>
-                        
+
                         <button type="submit" class="add btn btn-success btn-block"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</button>
                     </form>
                 </div>
@@ -101,7 +110,7 @@
 <!-- Footer Pequeño -->
 <footer class="bg-white border-top py-3 mt-auto text-center text-muted">
     <div class="container">
-        <small><i class="fa fa-code"></i> Gestión de Usuarios &copy; 2026 — Desarrollado con PHP, AJAX y Bootstrap</small>
+        <small><i class="fa fa-code"></i> Gestión de Usuarios &copy; 2026 — Desarrollado por Juan Carlos Medina (Fines Educativos)</small>
     </div>
 </footer>
 
@@ -109,6 +118,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!-- Tu archivo JavaScript personalizado -->
-
+<script src="assets/js/app.js"></script>
 </body>
 </html>

@@ -40,6 +40,7 @@ practica_db/
 │   ├── js/
 │   │   └── app.js      # Peticiones AJAX y manipulación del DOM
 │   ├── css/            # Hojas de estilo personalizadas
+│   │   └── app.css     # Estilos personalizados de la aplicación
 │   └── img/            # Recursos gráficos e imágenes
 │       └── index.png   # Imagen de la vista previa del index
 └── php/
@@ -107,9 +108,9 @@ practica_db/
 
 ---
 
-## 👤 Autoría y Propósito
+## 👨‍💻 Autoría y Propósito
 
-Este proyecto fue desarrollado íntegramente por **Juan Carlos Medina** con fines puramente educativos y demostrativos. 
+Este proyecto fue desarrollado íntegramente por **Ing. Juan Carlos Medina** con fines puramente educativos y demostrativos. 
 
 * **Propósito:** Servir como guía práctica y material didáctico sobre el desarrollo de aplicaciones web interactivas (CRUD) mediante peticiones asíncronas (AJAX), arquitectura limpia y buenas prácticas de seguridad en PHP.
 * **Licencia:** Libre para uso académico y de aprendizaje.
