@@ -6,6 +6,7 @@ Proyecto web modular para la gestión de registros (CRUD) con una arquitectura l
 
 ## 📁 Estructura del Proyecto
 
+```text
 practica_db/
 │
 ├── index.html          # Interfaz principal de la aplicación
@@ -25,6 +26,7 @@ practica_db/
     ├── editar.php      # Actualización de registros existentes
     ├── eliminar.php    # Eliminación de registros
     └── seleccionar.php # Consulta individual por ID
+```
 
 ![Gestión de usuarios](assets/img/index.png)
 
