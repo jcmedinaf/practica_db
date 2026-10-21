@@ -1,5 +1,8 @@
 # 🚀 Sistema de Gestión de Usuarios (CRUD en PHP, MySQLi y AJAX)
 
+> 🎓 **Proyecto Académico / Educativo**  
+> Desarrollado por **Juan Carlos Medina** con fines de aprendizaje y demostración de arquitectura web asíncrona (CRUD) utilizando PHP, MySQLi, AJAX y Bootstrap 4.
+
 [![PHP](https://img.shields.io/badge/PHP-7.4%20%7C%208.x-777BB4?style=flat-square&logo=php&logoColor=white)](https://www.php.net/)
 [![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=flat-square&logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-4.0-563D7C?style=flat-square&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
@@ -101,3 +104,12 @@ practica_db/
 * **Cifrado de Contraseñas:** Uso del algoritmo de hashing unidireccional seguro `password_hash()` de PHP.
 * **Protección de Claves en Edición:** Si al editar un usuario el campo de contraseña se deja vacío, el sistema conserva intacta la clave hash existente en la base de datos.
 * **Manejo de Errores y Validaciones:** Respuestas estructuradas en JSON con control de estados (`exito` / `error`) y validación de correo mediante `FILTER_VALIDATE_EMAIL`.
+
+---
+
+## 👤 Autoría y Propósito
+
+Este proyecto fue desarrollado íntegramente por **Juan Carlos Medina** con fines puramente educativos y demostrativos. 
+
+* **Propósito:** Servir como guía práctica y material didáctico sobre el desarrollo de aplicaciones web interactivas (CRUD) mediante peticiones asíncronas (AJAX), arquitectura limpia y buenas prácticas de seguridad en PHP.
+* **Licencia:** Libre para uso académico y de aprendizaje.
