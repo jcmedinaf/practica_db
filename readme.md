@@ -28,19 +28,19 @@ practica_db/
     └── seleccionar.php # Consulta individual por ID
 ```
 
+## 💻 Vista Previa de la Aplicación
 ![Gestión de usuarios](assets/img/index.png)
 
 
 🛠️ Tecnologías Utilizadas
-Frontend:
 
+* Frontend:
     * HTML5
     * CSS3
     * JavaScript (Vanilla JS / jQuery)
     * AJAX (Peticiones asíncronas)
 
-Backend:
-
+* Backend:
     * PHP (Programación Estructurada / Procedural)
     * MySQL (mysqli)
 
