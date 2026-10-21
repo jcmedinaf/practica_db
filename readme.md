@@ -6,24 +6,24 @@ Proyecto web modular para la gestión de registros (CRUD) con una arquitectura l
 
 ## 📁 Estructura del Proyecto
 
-
 practica_db/
 │
 ├── index.html          # Interfaz principal de la aplicación
 ├── esquema.md          # Documentación del diseño o arquitectura
-├── esquema.md          # Archivo de Documentación de la estructura del proyecto
+├── readme.md           # Archivo de Documentación de la estructura del proyecto
 ├── database.sql        # Script para la creación de la base de datos y tablas
 ├── assets/
 │   ├── js/
 │   │   └── app.js      # Peticiones AJAX y manipulación del DOM
 │   ├── css/            # Hojas de estilo personalizadas
 │   └── img/            # Recursos gráficos e imágenes
+│       └── index.png   # Imagen de la vista previa del index
 └── php/
     ├── conexion.php    # Configuración de base de datos y conexión mysqli
     ├── listar.php      # Consulta y obtención de registros
     ├── agregar.php     # Inserción de nuevos datos
     ├── editar.php      # Actualización de registros existentes
-    ├── eliminar.php     # Eliminación de registros
+    ├── eliminar.php    # Eliminación de registros
     └── seleccionar.php # Consulta individual por ID
 
 ![Gestión de usuarios](assets/img/index.png)
