@@ -28,6 +28,13 @@ $(document).ready(function() {
      * de la base de datos y renderizarlos dinámicamente en la tabla HTML.
      * =================================================================
      */
+
+    function listar2(){
+        $.ajax({
+
+        });
+    }
+
     function listar() {
         $.ajax({
             url: 'php/listar.php', // Script backend que retorna todos los usuarios en formato JSON
@@ -53,14 +60,14 @@ $(document).ready(function() {
                 
                 // Recorre cada usuario recibido y construye las filas de la tabla HTML
                 if (Array.isArray(users)) {
-                    users.users = users; // Referencia interna segura
-                    users.forEach(user => {
-                        template += `
+                    users.users = users; // Referencia interna segura   
+                    users.forEach(user => { // apostrofe inverso para realizar interpolaciones combinacion de teclas alt+096 ``
+                        template += `   
                             <tr id="${user.id}">
                                 <td>${user.id}</td>
                                 <td>${user.nombre}</td>
                                 <td>${user.apellido}</td>
-                                <td>${user.email}</td>
+                                <td>${user.correo}</td>
                                 <td class="text-center">
                                     <button class="edit btn btn-warning id btn-sm">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar
@@ -148,13 +155,13 @@ $(document).ready(function() {
      */
     $(document).on('click', '.id', function() {
         let element = $(this)[0].parentElement.parentElement;
-        let id = $(element).attr('id');$.post('php/seleccionar.php', {id}, function(response) {
+        let id = $(element).attr('id');$.get('php/seleccionar.php', {id}, function(response) {
             let user = typeof response === 'string' ? JSON.parse(response) : response;
             
             // Rellena los campos del formulario con los valores actuales del usuario
             $('#nombre').val(user.nombre);
             $('#apellido').val(user.apellido);
-            $('#email').val(user.email);
+            $('#correo').val(user.correo);
             $('#clave').val(''); // Limpia el campo de contraseña por seguridad
             $('#id').val(user.id); // Almacena el ID oculto para la actualización
             
@@ -179,7 +186,7 @@ $(document).ready(function() {
             const postData = {
                 nombre: $('#nombre').val(),
                 apellido: $('#apellido').val(),
-                email: $('#email').val(),
+                correo: $('#correo').val(),
                 clave: $('#clave').val()
             };
             
@@ -206,7 +213,7 @@ $(document).ready(function() {
                 id: $('#id').val(),
                 nombre: $('#nombre').val(),
                 apellido: $('#apellido').val(),
-                email: $('#email').val(),
+                correo: $('#correo').val(),
                 clave: $('#clave').val()
             };
             
