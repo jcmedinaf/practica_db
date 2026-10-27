@@ -20,10 +20,10 @@ header('Content-Type: application/json');
 $json = array();
 
 // 1. Verificar que el parámetro 'id' exista en la petición POST
-if (isset($_POST['id'])) {
+if (isset($_GET['id'])) {
 
     // 2. Sanitizar y convertir estrictamente el ID a un número entero por seguridad
-    $id = (int)$_POST['id'];
+    $id = (int)$_GET['id'];
 
     // Valida que el ID sea un número positivo mayor a cero
     if ($id <= 0) {
@@ -57,7 +57,7 @@ if (isset($_POST['id'])) {
             'id' => $row['id'],
             'nombre' => $row['nombre'],
             'apellido' => $row['apellido'],
-            'email' => $row['correo']
+            'correo' => $row['correo']
         );
     } else {
         // Si la consulta fue exitosa pero no existe ningún usuario con ese ID

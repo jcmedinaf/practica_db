@@ -13,7 +13,7 @@
 $servidor   = "localhost";      // Dirección del servidor (generalmente localhost o 127.0.0.1)
 $usuario    = "root";           // Nombre de usuario de MySQL (por defecto en XAMPP/Laragon es root)
 $password   = "";               // Contraseña del usuario (por defecto en entornos locales suele estar vacía)
-$base_datos = "practica_db";    // Nombre de la base de datos a la que nos conectaremos
+$base_datos = "practica_db2";    // Nombre de la base de datos a la que nos conectaremos
 
 // Intentar la conexión con el servidor MySQL utilizando la función mysqli_connect
 $conexion = mysqli_connect($servidor, $usuario, $password, $base_datos);

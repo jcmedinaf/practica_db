@@ -20,16 +20,16 @@ header('Content-Type: application/json');
 $json = array();
 
 // 1. Verificar que todos los campos requeridos existan en la petición POST
-if (isset($_POST['nombre'], $_POST['apellido'], $_POST['email'], $_POST['clave'])) {
+if (isset($_POST['nombre'], $_POST['apellido'], $_POST['correo'], $_POST['clave'])) {
     
     // Limpiar espacios en blanco al inicio/final y escapar los datos de texto para prevenir Inyección SQL
     $nombre = mysqli_real_escape_string($conexion, trim($_POST['nombre']));
     $apellido = mysqli_real_escape_string($conexion, trim($_POST['apellido']));
-    $email = mysqli_real_escape_string($conexion, trim($_POST['email']));
+    $correo = mysqli_real_escape_string($conexion, trim($_POST['correo']));
     $clave_original = trim($_POST['clave']);
 
     // 2. Validar que ninguno de los campos obligatorios esté vacío
-    if ($nombre === '' || $apellido === '' || $email === '' || $clave_original === '') {
+    if ($nombre === '' || $apellido === '' || $correo === '' || $clave_original === '') {
         $json[] = array(
             'estado' => 'error',
             'mensaje' => 'Por favor, completa todos los campos obligatorios.'
@@ -39,7 +39,7 @@ if (isset($_POST['nombre'], $_POST['apellido'], $_POST['email'], $_POST['clave']
     }
 
     // 3. Validar que el correo electrónico tenga un formato estructural válido
-    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    if (!filter_var($_POST['correo'], FILTER_VALIDATE_EMAIL)) {
         $json[] = array(
             'estado' => 'error',
             'mensaje' => 'El formato del correo electrónico no es válido.'
@@ -53,7 +53,7 @@ if (isset($_POST['nombre'], $_POST['apellido'], $_POST['email'], $_POST['clave']
     $clave_segura = mysqli_real_escape_string($conexion, $clave_hash);
 
     // 5. Construir y ejecutar la consulta SQL de inserción con los datos protegidos
-    $query = "INSERT INTO usuarios (nombre, apellido, correo, clave) VALUES ('$nombre', '$apellido', '$email', '$clave_segura')";
+    $query = "INSERT INTO usuarios (nombre, apellido, correo, clave) VALUES ('$nombre', '$apellido', '$correo', '$clave_segura')";
     $result = mysqli_query($conexion, $query);
 
     // Control de errores en caso de que falle la sentencia SQL (ej. correo duplicado)
@@ -76,7 +76,7 @@ if (isset($_POST['nombre'], $_POST['apellido'], $_POST['email'], $_POST['clave']
         'id' => $ultimo_id,
         'nombre' => $_POST['nombre'],
         'apellido' => $_POST['apellido'],
-        'email' => $_POST['email']
+        'correo' => $_POST['correo']
     );
 
     // Codifica y envía el resultado final en formato JSON

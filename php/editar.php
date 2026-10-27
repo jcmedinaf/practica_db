@@ -21,16 +21,16 @@ header('Content-Type: application/json');
 $json = array();
 
 // 1. Verificar que los campos obligatorios requeridos existan en la petición POST (incluyendo el ID)
-if (isset($_POST['id'], $_POST['nombre'], $_POST['apellido'], $_POST['email'])) {
+if (isset($_POST['id'], $_POST['nombre'], $_POST['apellido'], $_POST['correo'])) {
 
     // Limpiar espacios en blanco y escapar los datos de texto para prevenir Inyección SQL
     $id = (int)$_POST['id']; // Convierte y sanitiza el ID estrictamente a un número entero
     $nombre = mysqli_real_escape_string($conexion, trim($_POST['nombre']));
     $apellido = mysqli_real_escape_string($conexion, trim($_POST['apellido']));
-    $email = mysqli_real_escape_string($conexion, trim($_POST['email']));
+    $correo = mysqli_real_escape_string($conexion, trim($_POST['correo']));
 
     // 2. Validar que los datos obligatorios no estén vacíos y que el ID sea válido
-    if ($id <= 0 || $nombre === '' || $apellido === '' || $email === '') {
+    if ($id <= 0 || $nombre === '' || $apellido === '' || $correo === '') {
         $json[] = array(
             'estado' => 'error',
             'mensaje' => 'Por favor, completa todos los campos obligatorios y proporciona un ID válido.'
@@ -40,7 +40,7 @@ if (isset($_POST['id'], $_POST['nombre'], $_POST['apellido'], $_POST['email'])) 
     }
 
     // 3. Validar que el correo electrónico tenga un formato estructural válido
-    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    if (!filter_var($_POST['correo'], FILTER_VALIDATE_EMAIL)) {
         $json[] = array(
             'estado' => 'error',
             'mensaje' => 'El formato del correo electrónico no es válido.'
@@ -56,10 +56,10 @@ if (isset($_POST['id'], $_POST['nombre'], $_POST['apellido'], $_POST['email'])) 
         $clave_hash = password_hash($clave_original, PASSWORD_DEFAULT);
         $clave_segura = mysqli_real_escape_string($conexion, $clave_hash);
 
-        $query = "UPDATE usuarios SET nombre = '$nombre', apellido = '$apellido', correo = '$email', clave = '$clave_segura' WHERE id = $id";
+        $query = "UPDATE usuarios SET nombre = '$nombre', apellido = '$apellido', correo = '$correo', clave = '$clave_segura' WHERE id = $id";
     } else {
         // No se envió contraseña: se actualizan nombre, apellido y correo conservando intacta la clave anterior en la BD
-        $query = "UPDATE usuarios SET nombre = '$nombre', apellido = '$apellido', correo = '$email' WHERE id = $id";
+        $query = "UPDATE usuarios SET nombre = '$nombre', apellido = '$apellido', correo = '$correo' WHERE id = $id";
     }
 
     // 5. Ejecutar la consulta SQL de actualización contra la base de datos
@@ -82,7 +82,7 @@ if (isset($_POST['id'], $_POST['nombre'], $_POST['apellido'], $_POST['email'])) 
         'id' => $id,
         'nombre' => $_POST['nombre'],
         'apellido' => $_POST['apellido'],
-        'email' => $_POST['email']
+        'correo' => $_POST['correo']
     );
 
     // Codifica y envía el resultado final en formato JSON

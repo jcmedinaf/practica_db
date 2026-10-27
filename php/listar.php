@@ -38,7 +38,7 @@ if ($result) {
             'id' => $row['id'],
             'nombre' => $row['nombre'],
             'apellido' => $row['apellido'],
-            'email' => $row['correo']
+            'correo' => $row['correo']
         );
     }
 }
